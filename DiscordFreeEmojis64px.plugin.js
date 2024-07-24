@@ -144,9 +144,9 @@ function Start() {
 
     function replaceEmoji(parseResult, emoji) {
         if (emoji.animated) {
-            emoji.url = "https://cdn.discordapp.com/emojis/"+emoji.id+".gif?size=44&quality=lossless"
+            emoji.url = "https://cdn.discordapp.com/emojis/"+emoji.id+".gif?size=64&quality=lossless"
         } else {
-            emoji.url = "https://cdn.discordapp.com/emojis/"+emoji.id+".webp?size=44&quality=lossless"
+            emoji.url = "https://cdn.discordapp.com/emojis/"+emoji.id+".webp?size=64&quality=lossless"
         }
         
         parseResult.content = parseResult.content.replace(`<${emoji.animated ? "a" : ""}:${emoji.originalName || emoji.name}:${emoji.id}>`, emoji.url.split("?")[0] + "?size=64");
